@@ -19,6 +19,7 @@ func main() {
 	noop := func() { wg.Done(); <-c }
 
 	const numGoroutines = 1e4
+	fmt.Println(numGoroutines)
 	wg.Add(numGoroutines)
 	before := memConsumed()
 	for i := numGoroutines; i > 0; i-- {
